@@ -4,8 +4,12 @@ import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
-import { AuthStorage, ModelRegistry } from "@mariozechner/pi-coding-agent";
+import { AuthStorage, ModelRegistry } from "@earendil-works/pi-coding-agent";
 import extension from "../index.ts";
+
+// Keep host NVIDIA credentials from affecting missing-env assertions.
+delete process.env.NVIDIA_NIM_API_KEY;
+delete process.env.NVIDIA_API_KEY;
 
 function createUserContext() {
 	return {

@@ -42,9 +42,9 @@ import type {
 	Context,
 	Model,
 	SimpleStreamOptions,
-} from "@mariozechner/pi-ai";
-import { streamSimpleOpenAICompletions } from "@mariozechner/pi-ai";
-import { getAgentDir, type ExtensionAPI } from "@mariozechner/pi-coding-agent";
+} from "@earendil-works/pi-ai";
+import { streamSimpleOpenAICompletions } from "@earendil-works/pi-ai";
+import { getAgentDir, type ExtensionAPI } from "@earendil-works/pi-coding-agent";
 
 // =============================================================================
 // Constants

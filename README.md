@@ -1,6 +1,6 @@
 # pi-nvidia-nim
 
-NVIDIA NIM API provider extension for [pi coding agent](https://github.com/badlogic/pi-mono) - access 100+ models from [build.nvidia.com](https://build.nvidia.com) including DeepSeek V4 Flash/Pro, DeepSeek V3.2, Kimi K2.6, MiniMax M2.1, GLM-5, GLM-4.7, Qwen3, Llama 4, and many more.
+NVIDIA NIM API provider extension for [pi coding agent](https://github.com/earendil-works/pi-mono) - access 100+ models from [build.nvidia.com](https://build.nvidia.com) including DeepSeek V4 Flash/Pro, DeepSeek V3.2, Kimi K2.6, MiniMax M2.1, GLM-5, GLM-4.7, Qwen3, Llama 4, and many more.
 
 https://github.com/user-attachments/assets/f44773e4-9bf8-4bb5-a9c0-d5938030701c
 
