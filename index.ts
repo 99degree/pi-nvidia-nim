@@ -124,7 +124,7 @@ const THINKING_CONFIGS: Record<string, ThinkingConfig> = {
 		enableKwargs: { enable_thinking: true, clear_thinking: false },
 		disableKwargs: { enable_thinking: false },
 	},
-	"z-ai/glm5": {
+	"z-ai/glm-5.1": {
 		enableKwargs: { enable_thinking: true, clear_thinking: false },
 		disableKwargs: { enable_thinking: false },
 	},
@@ -174,11 +174,22 @@ const THINKING_CONFIGS: Record<string, ThinkingConfig> = {
 		enableKwargs: { thinking: true },
 		disableKwargs: { thinking: false },
 	},
+        "nvidia/nemotron-3-super-120b-a12b": {
+                reasoning_budget: 16384,
+        },
 	// Mistral reasoning
 	"mistralai/magistral-small-2506": {
 		enableKwargs: { enable_thinking: true },
 		disableKwargs: { enable_thinking: false },
 	},
+        // Mistral reasoning
+        "mistralai/mistral-nemotron": {
+                enableKwargs: { enable_thinking: true },
+                disableKwargs: { enable_thinking: false },
+        },
+        "bytedance/seed-oss-36b-instruct" : {
+                thinking_budget: -1
+        }
 };
 
 // =============================================================================
@@ -282,6 +293,7 @@ const CONTEXT_WINDOWS: Record<string, number> = {
 	"meta/llama-4-scout-17b-16e-instruct": 524288,
 	"meta/llama3-70b-instruct": 8192,
 	"meta/llama3-8b-instruct": 8192,
+        "abacusai/dracarys-llama-3.1-70b-instruct": 131072,
 	// Mistral
 	"mistralai/mistral-large-3-675b-instruct-2512": 131072,
 	"mistralai/mistral-medium-3-instruct": 131072,
@@ -339,16 +351,17 @@ const CONTEXT_WINDOWS: Record<string, number> = {
 	"nvidia/llama-3.3-nemotron-super-49b-v1.5": 131072,
 	"nvidia/nemotron-4-340b-instruct": 4096,
 	"nvidia/nvidia-nemotron-nano-9b-v2": 131072,
+        "nvidia/nemotron-3-super-120b-a12b": 1048576,
 	// OpenAI open-source
 	"openai/gpt-oss-120b": 131072,
 	"openai/gpt-oss-20b": 131072,
 	// Z-AI / GLM
 	"z-ai/glm4.7": 131072,
-	"z-ai/glm5": 131072,
+	"z-ai/glm-5.1": 131072,
 	// StepFun
-	"stepfun-ai/step-3.5-flash": 131072,
+	"stepfun-ai/step-3.5-flash": 256000,
 	// ByteDance
-	"bytedance/seed-oss-36b-instruct": 131072,
+	"bytedance/seed-oss-36b-instruct": 524288,
 	// IBM Granite
 	"ibm/granite-3.3-8b-instruct": 131072,
 	"ibm/granite-3.0-8b-instruct": 8192,
@@ -399,13 +412,17 @@ const MAX_TOKENS: Record<string, number> = {
 	"meta/llama-4-maverick-17b-128e-instruct": 16384,
 	"meta/llama-4-scout-17b-16e-instruct": 16384,
 	"z-ai/glm4.7": 16384,
-	"z-ai/glm5": 16384,
+	"z-ai/glm-5.1": 16384,
 	"qwen/qwen3-coder-480b-a35b-instruct": 65536,
 	"nvidia/llama-3.1-nemotron-ultra-253b-v1": 32768,
 	"openai/gpt-oss-120b": 16384,
 	"openai/gpt-oss-20b": 16384,
 	"mistralai/mistral-large-3-675b-instruct-2512": 16384,
 	"mistralai/devstral-2-123b-instruct-2512": 32768,
+        "mistralai/mistral-nemotron": 16384,
+        "nvidia/nemotron-3-super-120b-a12b": 1048576, //16384,
+        "stepfun-ai/step-3.5-flash": 16384,
+        "bytedance/seed-oss-36b-instruct": 4096,
 };
 
 // =============================================================================
@@ -426,7 +443,7 @@ const FEATURED_MODELS = [
 	"minimaxai/minimax-m2.1",
 	"minimaxai/minimax-m2",
 	"minimaxai/minimax-m2.7",
-	"z-ai/glm5",
+	"z-ai/glm-5.1",
 	"z-ai/glm4.7",
 	"openai/gpt-oss-120b",
 	"openai/gpt-oss-20b",
